@@ -6,8 +6,8 @@ if (env.BRANCH_NAME == 'release') {
 
 properties props
 
-if (env.BRANCH_NAME == 'release'  && currentBuild.buildCauses*._class == ['jenkins.branch.BranchEventCause']) {
-  error 'No longer running builds on response to release branch pushes. If you wish to cut a release, use “Re-run checks” from this failing check in https://github.com/jenkinsci/bom/commits/release'
+if (env.BRANCH_NAME == 'release' && currentBuild.buildCauses*._class == ['jenkins.branch.BranchEventCause']) {
+  error 'No longer running builds on response to release branch pushes. If you wish to cut an out-of-order release, use “Re-run checks” from this failing check in https://github.com/jenkinsci/bom/commits/release'
 }
 
 def mavenEnv(Map params = [:], Closure body) {
